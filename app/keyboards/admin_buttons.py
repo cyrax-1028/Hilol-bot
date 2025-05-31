@@ -16,6 +16,7 @@ def get_admin_quran_menu():
         keyboard=[
             [KeyboardButton(text="🎧 Audio qo'shish")],
             [KeyboardButton(text="🖼️ Rasm qo'shish")],
+            [KeyboardButton(text="👳‍♂️ Qori qo'shish")],
             [KeyboardButton(text="🔝 Asosiy panel")]
         ],
         resize_keyboard=True,
