@@ -1,3 +1,56 @@
-.env
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
 
-.venv
+# Env fayllar
+.env
+.env.*
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Byte-compiled / cache
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Jupyter Notebook checkpointlari
+.ipynb_checkpoints/
+
+# Django migration cache (optional)
+*.mo
+*.pot
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.cache
+
+# mypy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Build files
+build/
+dist/
+*.egg-info/
