@@ -112,7 +112,7 @@ async def open_audio_section(message: Message, state: FSMContext):
 async def qori_tanlandi(message: Message, state: FSMContext):
     qori_name = message.text
 
-    if qori_name == "🔝 Asosiy panel":
+    if qori_name == "🔝 Asosiy menyu":
         await message.answer("Asosiy panelga qaytdingiz.", reply_markup=main_menu_keyboard)
         await state.clear()
         return
