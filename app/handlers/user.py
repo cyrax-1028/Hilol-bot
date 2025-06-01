@@ -146,8 +146,8 @@ async def sura_yoki_navi(message: Message, state: FSMContext):
     page = data.get("page", 0)
     audios = data.get("audios", [])
 
-    if text == "🔝 Asosiy panel":
-        await message.answer("Asosiy panelga qaytdingiz.", reply_markup=main_menu_keyboard)
+    if text == "🔝 Asosiy menyu":
+        await message.answer("Asosiy panelga qaytdingiz.", reply_markup=get_main_menu())
         await state.clear()
         return
 
