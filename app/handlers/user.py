@@ -101,7 +101,7 @@ async def open_audio_section(message: Message, state: FSMContext):
         qorilar = qorilar.fetchall()
 
     buttons = [[KeyboardButton(text=q.name)] for q in qorilar]
-    buttons.append([KeyboardButton(text="🔝 Asosiy menyu")])
+    buttons.append([KeyboardButton(text="⬅️ Ortga")])
     markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
     await message.answer("Qorini tanlang:", reply_markup=markup)
@@ -112,8 +112,8 @@ async def open_audio_section(message: Message, state: FSMContext):
 async def qori_tanlandi(message: Message, state: FSMContext):
     qori_name = message.text
 
-    if qori_name == "🔝 Asosiy menyu":
-        await message.answer("Asosiy panelga qaytdingiz.", reply_markup=main_menu_keyboard)
+    if qori_name == "⬅️ Ortga":
+        await message.answer("Ortga qaytdingiz.", reply_markup=get_quran_menu())
         await state.clear()
         return
 
@@ -146,8 +146,8 @@ async def sura_yoki_navi(message: Message, state: FSMContext):
     page = data.get("page", 0)
     audios = data.get("audios", [])
 
-    if text == "🔝 Asosiy menyu":
-        await message.answer("Asosiy panelga qaytdingiz.", reply_markup=get_main_menu())
+    if text == "⬅️ Ortga":
+        await message.answer("Asosiy panelga qaytdingiz.", reply_markup=get_quran_menu())
         await state.clear()
         return
 

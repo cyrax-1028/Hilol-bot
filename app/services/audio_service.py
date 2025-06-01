@@ -20,7 +20,7 @@ async def send_audio_surah_page(chat_id: int, state: FSMContext, page: int):
     nav_buttons = []
     if page > 0:
         nav_buttons.append(KeyboardButton(text="⬅️ Orqaga"))
-    nav_buttons.append(KeyboardButton(text="🔝 Asosiy panel"))
+    nav_buttons.append(KeyboardButton(text="📖 Qur'on"))
     if end < len(audios):
         nav_buttons.append(KeyboardButton(text="➡️ Oldinga"))
 
