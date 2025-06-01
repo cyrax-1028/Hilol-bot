@@ -14,3 +14,6 @@ class UserAudioState(StatesGroup):
 
 class AddQoriState(StatesGroup):
     name = State()
+
+class EditQoriState(StatesGroup):
+    waiting_for_new_name = State()

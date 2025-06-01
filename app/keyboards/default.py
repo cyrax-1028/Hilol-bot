@@ -6,7 +6,7 @@ def get_main_menu():
         keyboard=[
             [KeyboardButton(text="📖 Qur'on")],
             [KeyboardButton(text="🕋 Namoz vaqtlari")],
-            [KeyboardButton(text="🙏 Duo")],
+            [KeyboardButton(text="🙏 Duo va zikr")],
             [KeyboardButton(text="🤖 AI bo'limi")],
             [KeyboardButton(text="📄 Eslatma")],
             # [KeyboardButton(text="📘 O‘rganish")],
@@ -32,8 +32,8 @@ def get_quran_menu():
 def get_dua_menu():
     return ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="🎧 Audio")],
-            [KeyboardButton(text="🖼️ Rasm")],
+            [KeyboardButton(text="Tunda o'qiladigan duolar")],
+            [KeyboardButton(text="Zikrlar")],
             [KeyboardButton(text="🔝 Asosiy menyu")]
         ],
         resize_keyboard=True,

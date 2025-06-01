@@ -4,7 +4,7 @@ from aiogram.fsm.context import FSMContext
 from app.database.models import Qori, Surah, Audio
 from app.database.database import async_session
 from app.handlers.states import AddAudioState
-from app.handlers.admin import is_admin
+from app.handlers.admin.admin import is_admin
 from app.keyboards.admin_buttons import get_admin_quran_menu
 
 admin_router = Router()
@@ -18,7 +18,7 @@ async def start_adding_audio(message: Message, state: FSMContext):
             qorilar = qorilar.fetchall()
 
             buttons = [[KeyboardButton(text=q.name)] for q in qorilar]
-            buttons.append([KeyboardButton(text="🔝 Asosiy panel")])
+            buttons.append([KeyboardButton(text="❌ Bekor qilish")])
             markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
             await message.answer("Qorini tanlang:", reply_markup=markup)
@@ -27,6 +27,10 @@ async def start_adding_audio(message: Message, state: FSMContext):
 
 @admin_router.message(AddAudioState.choosing_qori)
 async def choose_qori(message: Message, state: FSMContext):
+    if message.text == "❌ Bekor qilish":
+        await message.answer("❌ Qori qo‘shish bekor qilindi.", reply_markup=get_admin_quran_menu())
+        await state.clear()
+        return
     qori_name = message.text
     async with async_session() as session:
         qori = await session.scalar(Qori.__table__.select().where(Qori.name == qori_name))

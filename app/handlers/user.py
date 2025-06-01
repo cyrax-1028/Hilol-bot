@@ -28,7 +28,7 @@ async def quran_menu_handler(message: Message):
     await message.answer("Qur'on bo‘limi:", reply_markup=get_quran_menu())
 
 
-@router.message(F.text == "🙏 Duo")
+@router.message(F.text == "🙏 Duo va zikr")
 async def dua_menu_handler(message: Message):
     await message.answer("Duo bo'limi:", reply_markup=get_dua_menu())
 
@@ -51,7 +51,8 @@ async def disklaymer_handler(message: Message):
         "Bot hech qanday tijoriy maqsadda ishlatilmaydi. "
         "Agar xatolik yoki noto‘g‘ri ma’lumot ko‘rsangiz, iltimos, [admin](https://t.me/QuestionUZ_Robot?start=acdd3a6f02ed4c) bilan bog‘laning.\n\n"
         "📚 Manbalar:\n"
-        "==> https://muslim.uz\n",
+        "==> https://muslim.uz\n"
+        "==> https://islom.uz/\n",
         parse_mode=ParseMode.MARKDOWN,
         disable_web_page_preview=True
     )
