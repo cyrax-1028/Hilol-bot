@@ -13,7 +13,6 @@ from app.handlers.states import UserAudioState
 from app.services.audio_service import send_audio_surah_page, SURAS_PER_PAGE
 from app.core.bot import bot
 
-
 router = Router()
 
 
@@ -42,6 +41,7 @@ class AIState(StatesGroup):
     waiting_for_question = State()
 
 
+@router.message(F.text == "/eslatma")
 @router.message(F.text == "📄 Eslatma")
 async def disklaymer_handler(message: Message):
     await message.answer(
@@ -58,6 +58,7 @@ async def disklaymer_handler(message: Message):
     )
 
 
+@router.message(F.text == "/gemini")
 @router.message(F.text == "🤖 AI bo'limi")
 async def enter_ai_mode(message: Message, state: FSMContext):
     await message.answer(
@@ -83,6 +84,7 @@ async def ai_response_handler(message: Message, state: FSMContext):
     await message.answer(response)
 
 
+@router.message(F.text == "/help")
 @router.message(F.text == "ℹ️ Yordam")
 async def help_handler(message: types.Message):
     await message.answer(HELP_TEXT)
