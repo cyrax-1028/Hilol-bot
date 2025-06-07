@@ -42,8 +42,8 @@ def get_dua_menu():
 
 
 regions = [
-    "Tashkent", "Samarkand", "Bukhara", "Khiva",
-    "Andijan", "Namangan", "Fergana", "Navoi",
+    "Toshkent", "Samarkand", "Bukhara", "Khiva",
+    "Andijon", "Namangan", "Fergana", "Navoiy",
     "Qarshi", "Termez", "Sirdarya",
     "Jizzakh", "Nukus"
 ]
